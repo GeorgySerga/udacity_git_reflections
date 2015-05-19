@@ -20,7 +20,7 @@ Because developers usually do stuff in different files and they are all required
 
 # How can you use the commands git log and git diff to view the history of files?
 
-git log is used to show the log. There could be different erguments, like -2 - to show last 2 entries, or --stat to show stats. git diff first_id second_id is used to compare two different commits.
+git log is used to show the log. There could be different erguments, like -2 - to show last 2 entries, or --stat to show stats. git diff first_id second_id is used to compare two different commits (first is old, second is new).
 
 # How might using version control make you more confident to make changes that could break something?
 
