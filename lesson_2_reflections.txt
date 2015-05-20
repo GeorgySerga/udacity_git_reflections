@@ -5,3 +5,11 @@ Well, as I see it git creates .git directory, where metadata about files, their 
 # How is the staging area different from the working directory and the repository? What value do you think it offers?
 
 I can add files that i want to be commited (may be some trash in working directory, drafts etc.). Also I can make logical commits, chosing what to commit first.
+
+# How can you use the staging area to make sure you have one commit per logical change?
+
+As was written before, chose needed files, commit, repeat.
+
+# What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+
+Two different versions of app might be under the development, and while you can change bugs on the stable version you also might develop new features, separately.
