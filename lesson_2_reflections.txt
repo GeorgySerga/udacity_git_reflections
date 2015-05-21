@@ -1,15 +1,42 @@
 # What happens when you initialize a repository? Why do you need to do it?
 
-Well, as I see it git creates .git directory, where metadata about files, their states (hashes maybe) is stored. Why - because we want to track changes in our files, track out commits and so on.
+  Well, as I see it git creates .git directory, where metadata about files, their states (hashes maybe) is stored. Why - because we want to track changes in our files, track our commits and so on.
 
 # How is the staging area different from the working directory and the repository? What value do you think it offers?
 
-I can add files that i want to be commited (may be some trash in working directory, drafts etc.). Also I can make logical commits, chosing what to commit first.
+  I can add files that i want to be commited (may be some trash in working directory, drafts etc. which I don't want to be published). Also I can make logical commits, chosing what to commit first (i.e. files are not yet in the repository so you can still add/remove files from the staging area before making a commit).
 
 # How can you use the staging area to make sure you have one commit per logical change?
 
-As was written before, chose needed files, commit, repeat.
+  As was written before, chose needed files, commit, repeat.
 
 # What are some situations when branches would be helpful in keeping your history organized? How would branches help?
 
-Two different versions of app might be under the development, and while you can change bugs on the stable version you also might develop new features, separately.
+  Two different versions of app might be under the development, and while you can change bugs on the stable version you also might develop new features, separately. This will keep the history clean and logical, but you can still use version control during development. Help : Safe to make big changes and test new things out.
+
+# How do the diagrams help you visualize the branch structure?
+
+  By drawing the diagram you can directly see the relations between commits and branches. This makes it clear where to find specific changes.
+
+# What is the result of merging two branches together?
+
+  The result is one branch with changes from both branches.
+
+# What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
+
+  Automatic merging saves (should) time compared to doing merges manually.
+
+Commands:
+
+git add file|    Add a file to the staging area
+git commit  |    Commit the files from the staging area to the repository
+git status  |    Show which files are in the staging area, which are changed and not there yet, and which are not tracked
+git diff  |    Git diff without arguments is comparing the working directory with the staging area
+git diff --staged  |    Compare the staging area with the repository
+git log --graph --oneline <branch1> <branch2> ... <branchN> |    Show a visual representation of the commit history within different branches
+git branch new_branch_name  |  create new branch
+git checkout new_branch_name | checkout nranch with name new_branch_name
+git checkout -b new_branch_name  |    Creates a new branch and do a checkout on this branch in one call instead of git branch new_branch_name and git checkout new_branch_name
+git merge branch1 branch2  |    Merge two branches, branch2 get merged into branch1 . If there are conflicts you will be notified, and in the file HEAD is your code, >>>>master is a code from another branch.
+git branch -d name  |    Remove the branch with the specified name
+git show commitId  |    Show the changes made in this commit compared to its parent. This is working even after merging.
