@@ -1,3 +1,36 @@
-Why remote?
+# Why remote?
 
-To share, backup and collaborate.
+  To share, backup and collaborate.
+
+# Why pull manually?
+
+  There might be other contributors with different vision, you might don't want their code due to code conflicts.
+
+# Describe the differences between forks, clones, and branches. When would you use one instead of another?
+
+  Fork - there is a repository, I don't have a permission to make changes to it, but I wanna make smth mine with the code. Clone - to make a copy of a repo. Branch - to have a different development branch, i.e. for dealing with bugs or developing smth experimental.
+
+# What is the benefit of having a copy of the last known state of the remote stored locally?
+
+  Lost track here. But maybe the reason is having a chance to diff locally.
+
+# How would you collaborate without using Git or GitHub? What would be easier, and what would be harder?
+
+  One works day, one works night :) No git, no social.
+
+# When would you want to make changes in a separate branch rather than directly in master? What benefits does each approach have?
+
+  When I want others to review and give feedback, before updating the master. It's harder and it takes time, and when you're tired - push to master :) You want to make changes in a different branch so that the master branch always stays in a working state. By using a different branch, you can push your changes to GitHub for review by other people, without directly messing up the master branch. For small changes it is a lot quicker to make them directly in the master branch, but this comes with a risk.
+
+Commands:
+
+git remote  |    Show all remote locations for the repository
+git remote add <name> <url> |     Add a new remote location for the repository. <name> usually is origin, <url> is github repo.
+git remote -v  |    Outputs the remote locations with verbose information (fetch and push urls)
+git remote rm <name> | remove remote with <name>
+git remote rename <old-name> <new-name> | renaming remote
+git push origin master  |    Push the master branch to the remote location origin.
+git pull origin master  |    Get the master branch from the remote location origin.
+git fetch origin branch |    Downloads chosen branch from remote called origin. If branch is not specified - whole remote.
+git pull origin master  |    = git fetch origin + git merge master origin/master
+git fetch origin  |    Get the changes from the remote location into the (hidden?) origin/master branch
